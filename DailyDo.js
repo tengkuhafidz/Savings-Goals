@@ -73,9 +73,9 @@ function getStreak(){
 	return Streak.findOne({user:Meteor.userId()},{streak:1}).streak;
 }
 
-Template.items.onRendered(function(){
-  this.$(".modal-trigger").leanModal();
-});
+// Template.items.onRendered(function(){
+//   this.$(".modal-trigger").leanModal();
+// });
 
 
 Template.body.helpers({
@@ -110,9 +110,9 @@ Template.body.helpers({
 
 	}
 });
-Template.body.rendered = function() {
-		$('.modal-trigger').leanModal({});
-}
+// Template.body.rendered = function() {
+// 		$('.modal-trigger').leanModal({});
+// }
 
 Template.body.events({
 	// 'click .modal-trigger':function(){
@@ -125,7 +125,7 @@ Template.body.events({
 		var currentAmount = event.target.currentAmount.value;
 		var savingsMonthly = event.target.savingsMonthly.value;
 		//derived values
-		var balanceAmount = targetAmount - currentAmount;
+		// var balanceAmount = targetAmount - currentAmount;
 		var monthsNeeded = balanceAmount/savingsMonthly;
 		var progressPercentage = currentAmount / targetAmount * 100;
 		if ($.trim(addItem) === '' ){
@@ -146,6 +146,9 @@ Template.body.events({
 });
 
 Template.items.events({
+	'click .modal-trigger':function(){
+		$('.modal-trigger').leanModal({});
+	},
 	'click .delete': function(){
 		Meteor.call("deleteItemMethod",this._id);
 	},
