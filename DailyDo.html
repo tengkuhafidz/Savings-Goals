@@ -30,7 +30,7 @@
 	<nav class="light-blue darken-4 z-depth-0">
 		<div class="nav-wrapper">
 			<a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="mdi-navigation-menu"></i></a>
-			<a href="#" class="brand-logo center">Savings Goals</a>
+			<a href="#" class="brand-logo center">FSavings Goals</a>
 			<ul class="right">
 				<li><a class="modal-trigger" href="#modalAddItem" ><i class="mdi-content-add"></i></a></li>
 			</ul>
@@ -80,12 +80,16 @@
 		{{#each itemList}}
 			{{> items}}	
 		{{/each}}
-
 		</div>
 	</ul>
 
 	{{>addItem}}
 
+	<script type="text/javascript">
+
+		$('.modal-trigger').leanModal({});
+      
+	</script>
 	<!-- // For logged in users -->
 	<!-- For users who are logged out  -->
 	{{else}}
