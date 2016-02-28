@@ -73,6 +73,10 @@ function getStreak(){
 	return Streak.findOne({user:Meteor.userId()},{streak:1}).streak;
 }
 
+Template.items.onRendered(function () {
+    this.$('.modal-trigger').leanModal({});
+});
+
 Template.body.helpers({
 	itemList: function(){
 		return ConsistentDB.find({owner: Meteor.userId()});
