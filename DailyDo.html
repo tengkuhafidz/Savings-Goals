@@ -75,14 +75,13 @@
 
 
 
-	<ul class="collection">
-		<div class="row">
+		<div class="row " style="margin-top: 15px;">
 
 		{{#each itemList}}
 			{{> items}}	
 		{{/each}}
 		</div>
-	</ul>
+
 
 	{{>addItem}}
 
@@ -173,6 +172,7 @@
 						<label class="active" for="addItem">Goal (In Words)</label>
 					</div>    
 					<div class="input-field">
+						<span class="input-group-addon">$</span>
 						<input id="updateTargetAmount" type="number" name="updateTargetAmount" class="validate" value="{{targetAmount}}">
 						<label class="active" for="updateTargetAmount">Target Amount (In Dollars)</label>
 					</div> 
