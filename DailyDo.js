@@ -159,11 +159,6 @@ Template.items.events({
 		} else {
 			var item = item.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 			Meteor.call("updateItemMethod", this._id, item, targetAmount, currentAmount, savingsMonthly, balanceAmount, monthsNeeded, progressPercentage);
-			event.target.updateItem.value = "";
-			event.target.updateTargetAmount.value = "";
-			event.target.updateCurrentAmount.value = "";
-			event.target.updateSavingsMonthly.value = "";
-
 			return false;     
 		}
 	}
