@@ -76,10 +76,19 @@
 
 
 		<div class="row " style="margin:20px;">
+		<!-- check if items exist  -->
+		{{#if countItem}}
+			{{#each itemList}}
+				{{> items}}	
+			{{/each}}
 
-		{{#each itemList}}
-			{{> items}}	
-		{{/each}}
+			<!-- if no items -->
+			{{else}}
+			<center>
+				<p style="font-size: 1.4em; color: grey; margin-top: 150px"><i>No Savings Goals Set Yet.</i></p>
+				<a class="waves-effect waves-light btn light-blue lighten-1 modal-trigger" href="#modalAddItem">Add A Savings Goal</a>
+			</center>
+		{{/if}}
 		</div>
 
 
@@ -126,7 +135,6 @@
 </body>
 
 <template name="items">
-
         <div class="col s12 m12 l6">
           <div class="card black-text">
             <div class="card-content ">
